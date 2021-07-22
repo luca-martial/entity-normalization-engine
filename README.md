@@ -18,7 +18,6 @@ Here is a list of the files contained in this repository:
 
 ```
 pip install -r requirements.txt
-
 ```
 
 ## Contributing
