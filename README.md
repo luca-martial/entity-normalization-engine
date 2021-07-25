@@ -49,7 +49,7 @@ Does something seem off? Make sure to [report it](https://github.com/luca-martia
 
 ## Project Approach & Progress
 
-### Task Description:
+#### Task Description:
 
 **Part 1**: Build a system that can identify unique entities for each category above. Some of these will be trivial (remove spaces, edit distance) while others are more complicated and will need a trained model / some other form of knowledge and guidance.
 
@@ -63,7 +63,7 @@ Here are fictional examples of the strings we will be dealing with:
 - Physical Goods: “HARDWOOD TABLE”, “PLASTIC BOTTLE”
 - Locations: “LONDON”, “HONG KONG”, “ASIA”
 
-### Approach & Progress
+#### Approach & Progress:
 
 ✔️ **Part 1**: Category-Specific Normalization Engines
 
