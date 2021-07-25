@@ -57,11 +57,11 @@ Does something seem off? Make sure to [report it](https://github.com/luca-martia
 
 Here are fictional examples of the strings we will be dealing with:
 
-Company names: “Marks and Spencers Ltd”, “M&S Limited”, “NVIDIA Ireland”
-Company addresses: “SLOUGH SE12 2XY”, “33 TIMBER YARD, LONDON, L1 8XY”, “44 CHINA ROAD, KOWLOON, HONG KONG”
-Serial numbers: “XYZ 13423 / ILD”, “ABC/ICL/20891NC”
-Physical Goods: “HARDWOOD TABLE”, “PLASTIC BOTTLE”
-Locations: “LONDON”, “HONG KONG”, “ASIA”
+- Company names: “Marks and Spencers Ltd”, “M&S Limited”, “NVIDIA Ireland”
+- Company addresses: “SLOUGH SE12 2XY”, “33 TIMBER YARD, LONDON, L1 8XY”, “44 CHINA ROAD, KOWLOON, HONG KONG”
+- Serial numbers: “XYZ 13423 / ILD”, “ABC/ICL/20891NC”
+- Physical Goods: “HARDWOOD TABLE”, “PLASTIC BOTTLE”
+- Locations: “LONDON”, “HONG KONG”, “ASIA”
 
 ### Approach & Progress
 
@@ -81,7 +81,7 @@ Note: Original idea was to create for each category string similarity matrix wit
 
 My first thought in this part was to use the approach outlined in part 1, with the addition of Named Entity Recognition (NER) right after the text pre-processing step. This would allow to separate all strings into their respective categories (serial numbers, physical goods, locations, company addresses, company names) and would allow us to use the category-specific normalization engines that were built in part 1. The issues are that NER works best when words have a context within a sentence and entity types such as serial numbers and addresses would have to be custom-trained. We would also still be relying on the rule-based cleaning engines developed in part 1 instead of making use of intelligent systems.
 
-In thinking about a solution, I think it could be interesting to explore NER with the spaCy library. An open-source annotation tool can be used to create a dataset that we could use to fine-tune a spaCy NER model. When I say fine-tuning, there are 2 possibilities that both seem like risky hacks:
+In thinking about a solution, I think it could be interesting to explore NER with the spaCy library. An [open-source annotation tool](https://github.com/ManivannanMurugavel/spacy-ner-annotator) can be used to create a dataset that we could use to fine-tune a spaCy NER model. When I say fine-tuning, there are 2 possibilities that both seem like risky hacks:
 
 Option 1 - Creating new, custom entity types for the entities that don't yet have an entity type (serial number, address, physical goods) and updating a model with these new types. The obvious risk is that we will be run into issues of conflicting entity types. For example ADDRESS vs LOCATION.
 
