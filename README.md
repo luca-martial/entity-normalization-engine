@@ -6,7 +6,7 @@
 
 # Building an Entity Normalization Engine
 
-This repository contains experiments in an attempt to build an entity normalization engine. The input to this engine is short strings that could encompass the following entities: company names, company addresses, serial numbers, physical goods and locations. 
+This repository contains experiments in an attempt to build an entity normalization engine. The input to this engine is short strings that could encompass the following entities: company names, company addresses, serial numbers, physical goods and locations.
 
 ⚠️ **This project is in progress, and by no means complete. Project progress and approach are presented at the end of this readme.**
 
@@ -71,7 +71,7 @@ The general, theoretical approach here is:
 
 Step 1 - Text preprocessing: standardizing lettercase, punctuation, whitespace, accented/special characters, legal control terms (Ltd, Co, etc) depending on which category we are dealing with
 
-Step 2 - Entity clustering: use string_grouper library that uses TF-IDF (Term Frequency multiplied by Inverse Document Frequency) with N-Grams to calculate cosine similarities within a single Series of strings and groups them by assigning to each string one string from the group chosen as the group-representative for each group of similar strings found.
+Step 2 - Entity clustering: use [string_grouper](https://github.com/Bergvca/string_grouper) library that uses TF-IDF (Term Frequency multiplied by Inverse Document Frequency) with N-Grams to calculate cosine similarities within a single Series of strings and groups them by assigning to each string one string from the group chosen as the group-representative for each group of similar strings found. Output is a timestamped CSV file for each category of the grouped entities.
 
 Note: Original idea was to create for each category string similarity matrix with similarity metric such as levenshtein distance, Jaro-Winkler or caverphone algorithm. Next, use clustering algorithm to cluster entities; affinity propagation seems to be standard for this task. For each unique entity (cluster) assign substring with the longest string length as the standard name for that cluster. I experimented with these approach but found the chosen approach to be quicker to execute, more legible and have better performance.
 
