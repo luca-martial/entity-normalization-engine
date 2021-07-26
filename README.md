@@ -15,9 +15,9 @@ This repository contains experiments in an attempt to build an entity normalizat
 Here is a list of the files contained in this repository:
 
 - **[experiments.ipynb](https://github.com/luca-martial/entity-normalization-engine/tree/main/experiments.ipynb)**: Jupyter notebook with thought process laid out and experiments that lead to the final approach considered to create the engine
+- **[requirements.txt](https://github.com/luca-martial/entity-normalization-engine/blob/main/requirements.txt)**: Required libraries to install for the project
 - **[data](https://github.com/luca-martial/entity-normalization-engine/tree/main/data)**: Folder with datasets used for the project
 - **[utils](https://github.com/luca-martial/entity-normalization-engine/tree/main/utils)**: Folder with collection of functions that will be created from experiments
-- **[requirements.txt](https://github.com/luca-martial/entity-normalization-engine/blob/main/requirements.txt)**: Required libraries to install for the project
 
 ## Installation & Usage
 
