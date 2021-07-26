@@ -16,7 +16,7 @@ Here is a list of the files contained in this repository:
 
 - **[experiments.ipynb](https://github.com/luca-martial/entity-normalization-engine/tree/main/experiments.ipynb)**: Jupyter notebook with thought process laid out and experiments that lead to the final approach considered to create the engine
 - **[requirements.txt](https://github.com/luca-martial/entity-normalization-engine/blob/main/requirements.txt)**: Required libraries to install for the project
-- **[data](https://github.com/luca-martial/entity-normalization-engine/tree/main/data)**: Folder with datasets used for the project
+- **[data](https://github.com/luca-martial/entity-normalization-engine/tree/main/data)**: Folder with datasets created by and used for the project
 - **[utils](https://github.com/luca-martial/entity-normalization-engine/tree/main/utils)**: Folder with collection of functions that will be created from experiments
 
 ## Installation & Usage
@@ -49,7 +49,7 @@ Does something seem off? Make sure to [report it](https://github.com/luca-martia
 
 ## Project Approach & Progress
 
-#### Task Description:
+### Task Description:
 
 **Part 1**: Build a system that can identify unique entities for each category above. Some of these will be trivial (remove spaces, edit distance) while others are more complicated and will need a trained model / some other form of knowledge and guidance.
 
@@ -63,7 +63,7 @@ Here are fictional examples of the strings we will be dealing with:
 - Physical Goods: “HARDWOOD TABLE”, “PLASTIC BOTTLE”
 - Locations: “LONDON”, “HONG KONG”, “ASIA”
 
-#### Approach & Progress:
+### Approach & Progress:
 
 ✔️ **Part 1**: Category-Specific Normalization Engines
 
