@@ -6,7 +6,15 @@
 
 # Building an Entity Normalization Engine
 
-This repository contains experiments in an attempt to build an entity normalization engine. The input to this engine is short strings that could encompass the following entities: company names, company addresses, serial numbers, physical goods and locations.
+This repository contains experiments in an attempt to build an entity normalization engine. The input to this engine is short strings that could encompass the following entities: company names, company addresses, serial numbers, physical goods and locations. The output is a timestamped CSV file of the grouped entities.
+
+Approach summarised:
+
+1. Retrieve incoming string, feed to Facebook's [bart-large-mnli](https://huggingface.co/facebook/bart-large-mnli) NLI-based Zero Shot Text Classification model using HuggingFace's zero-shot classification pipeline. Assign class with highest probability to string.
+2. Feed string to that class-specific entity normalization engine. Each class-specific engine has its unique text pre-processing pipeline and uses TF-IDF with N-Grams to calculate cosine similarities for all strings in that class.
+3. Entities are then grouped based on cosine similarity and we output a CSV with grouped entities and their group-representatives.
+
+*Note: We use a minimum threshold for cosine similarity to decide which entities to group. That minimum theshold is 99% for serial numbers and addresses vs 30% for locations, physical goods and company names. Technically, this means that we could just separate out serial numbers and addresses from the rest and use just 2 different normalization engines. However, if ever we find a better approach for entity normalization, it will be useful to classify entities into the 5 different categories given to us.*
 
 ⚠️ **This project is in progress, and by no means complete. Project progress and approach are presented at the end of this readme.**
 
@@ -78,6 +86,8 @@ Note: Original idea was to create for each category string similarity matrix wit
 *Remaining task: generate python scripts for each category, make sure code is tested and ready to be used.*
 
 **Part 2**: General Normalization Engine
+
+**Update**: The final approach will be to use NLI-based Zero Shot Text Classification as a first step. We can use Facebook's [bart-large-mnli](https://huggingface.co/facebook/bart-large-mnli) model and HuggingFace's zero-shot classification pipeline. We could also use the manual approach with native Transformers/PyTorch code if for any reason we didn't like using the former.
 
 My first thought in this part was to use the approach outlined in part 1, with the addition of Named Entity Recognition (NER) right after the text pre-processing step. This would allow to separate all strings into their respective categories (serial numbers, physical goods, locations, company addresses, company names) and would allow us to use the category-specific normalization engines that were built in part 1. The issues are that NER works best when words have a context within a sentence and entity types such as serial numbers and addresses would have to be custom-trained. We would also still be relying on the rule-based cleaning engines developed in part 1 instead of making use of intelligent systems.
 
