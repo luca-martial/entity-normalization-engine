@@ -5,3 +5,4 @@ string_grouper
 time
 google
 cleanco
+transformers[torch]
