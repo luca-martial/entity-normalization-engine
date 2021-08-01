@@ -114,5 +114,4 @@ def clustering_func(dataframe):
 
     # Return dataframe of grouped entities
     dataframe = pd.concat([dataframe_low_threshold, dataframe_high_threshold], ignore_index = True)
-    dataframe.drop(['entity_type', 'clean_entity'], axis=1, inplace=True)
     return dataframe
