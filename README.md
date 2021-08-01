@@ -16,7 +16,7 @@ Approach summarised:
 
 *Note: We use a minimum threshold for cosine similarity to decide which entities to group. That minimum theshold is 99% for serial numbers and addresses vs 30% for locations, physical goods and company names. Technically, this means that we could just separate out serial numbers and addresses from the rest and use just 2 different normalization engines. However, if ever we find a better approach for entity normalization, it will be useful to classify entities into the 5 different categories given to us.*
 
-<img src="https://github.com/luca-martial/entity-normalization-engine/blob/main/engine_screenshot.png" width=800><br>
+<img src="https://github.com/luca-martial/entity-normalization-engine/blob/main/engine_screenshot.png" width=800 align="center"><br>
 
 
 ## Repository Structure
