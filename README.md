@@ -4,7 +4,7 @@
 [![Contributors][contributors-shield]][contributors-url]
 
 
-# Building an Entity Normalization Engine
+# Building an Entity Normalization Engine ⚙️
 
 This repository contains the scripts of an entity normalization engine. The input to this engine is short strings that could encompass the following entities: company names, company addresses, serial numbers, physical goods and locations. The output is a timestamped CSV file of the grouped entities.
 
@@ -14,7 +14,7 @@ Approach summarised:
 2. Feed string to that class-specific entity normalization engine. Each class-specific engine has its unique text pre-processing pipeline and uses TF-IDF with N-Grams to calculate cosine similarities for all strings in that class.
 3. Entities are then grouped based on a minimum threshold of cosine similarity and we output a CSV with grouped entities and their group-representatives.
 
-## Engine Demo ⚙️
+## Engine Demo
 
 Here's a screenshot of the entity normalization engine in action on a terminal:
 
