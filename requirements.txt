@@ -1,5 +1,5 @@
 pandas
-re
+regex
 numpy
 cleanco
 string_grouper
