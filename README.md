@@ -6,7 +6,7 @@
 
 # Building an Entity Normalization Engine ⚙️
 
-This repository contains the scripts of an entity normalization engine. The input to this engine is short strings that could encompass the following entities: company names, company addresses, serial numbers, physical goods and locations. The output is a timestamped CSV file of the grouped entities.
+This repository is an attempt at building an entity normalization engine. The input to this engine is short strings that could encompass the following entities: company names, company addresses, serial numbers, physical goods and locations. The output is a timestamped CSV file of the grouped entities.
 
 Approach summarised:
 
