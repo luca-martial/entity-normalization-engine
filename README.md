@@ -16,7 +16,7 @@ Approach summarised:
 
 ## Engine Demo
 
-Here's a screenshot of the entity normalization engine in action on a terminal:
+Here's a screenshot of the entity normalization engine in action on a terminal:  
 
 <p align="center">
 <img src="https://github.com/luca-martial/entity-normalization-engine/blob/main/data/engine_screenshot.png" width=800><br>
